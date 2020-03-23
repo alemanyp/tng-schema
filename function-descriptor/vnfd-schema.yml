@@ -44,6 +44,8 @@ definitions:
   general_units:
     enum:
       - "Percentage"
+      - "Binary"
+      - "Other"
   time_units:
     enum:
       - "ns"  # nano seconds
@@ -124,6 +126,9 @@ definitions:
           port:
             description: "For CUDs only: Port of the container's connection point."
             type: "integer"
+          ports: # see: https://github.com/containernet/containernet/wiki/Exposing-and-mapping-network-ports
+            description: "For CUDs only: List of ports"
+            type: "array"
           publish:  # see: https://github.com/containernet/containernet/wiki/Exposing-and-mapping-network-ports
             description: "For CUDs only: Directly publish a port of a CDU, e.g., for debugging."
             type: "object"
@@ -184,7 +189,7 @@ definitions:
       name:
        description: "The name of the parameter to monitor. The name has to be supported by the service platform or the FSM."
        type: "string"
-       pattern: "^[A-Za-z-_]+$"
+       #pattern: "^[A-Za-z-_]+$"
       unit:
        description: "The unit used to monitor (or represent) the parameter."
        oneOf:
@@ -627,6 +632,12 @@ definitions:
 
         connection_points:
           $ref: "#/definitions/connection_points"
+        monitoring_parameters:
+          description: "The various metrics and parameters to monitor."
+          type: "array"
+          items:
+            description: "A specific monitoring metric or parameter."
+            $ref: "#/definitions/monitoring"
         parameters:
           description: "Additional CNDU parameter dictionaries."
           type: "object"

@@ -70,8 +70,9 @@ The 5GTANGO schemata and descriptors are published under Apache 2.0 license. Ple
 The following lead developers are responsible for this repository and have admin rights. They can, for example, merge pull requests.
 
 - Manuel Peuster (@mpeuster)
-- Stefan Schneider (@StefanUPB)
+- Stefan Schneider ([@stefanbschneider](https://github.com/stefanbschneider/))
 
 #### Feedback-Chanel
 
 * Please use the GitHub issues to report bugs.
+* You may use the mailing list [sonata-dev@lists.atosresearch.eu](mailto:sonata-dev@lists.atosresearch.eu)
